@@ -14,8 +14,7 @@ const pushContent = () => {
       thumbs.push(`./photos/thumbnails/${index}.jpg`);
     }
   }
-}
-
+};
 // Calling the function to populate the arrays with links to images
 pushContent();
 
@@ -35,16 +34,17 @@ const captions = [
   `Bluebells<br>I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.`
 ];
 
+
 // Targets 'gallery' container and populates its HTML with 'gallery-item' photos
-function getGalleryItems(photos, thumbs, captions) {
+const getGalleryItems = (photos, thumbs, captions) => {
   // Targets 'gallery' container
   const gallery = document.getElementById('gallery');
   // Checks if all arrays are the same length
   if (photos.length === thumbs.length && photos.length === captions.length && thumbs.length === captions.length) {
     // Iterates through three arrays to form a gallery-item element
     for (let iteration = 0; iteration < photos.length; iteration += 1) {
-      // It also makes up a p element with link to the full image, but their display is hidden with CSS tools
-      let galleryItem = `<div class="gallery-item"><img src="${thumbs[iteration]}" alt="${captions[iteration]}"/><p class="display-none">${photos[iteration]}</p></div>`;
+      // Div is a wrapper of anchor (lighbox attributes) and image (thumbnails)
+      let galleryItem = `<div class="gallery-item"><a href="${photos[iteration]}" data-lightbox="imageset" data-title="${captions[iteration]}"><img src="${thumbs[iteration]}" alt="${captions[iteration]}"/></a></div>`;
       // Then add it to the container
       gallery.innerHTML += galleryItem;
     }
@@ -52,12 +52,12 @@ function getGalleryItems(photos, thumbs, captions) {
   } else {
     throw new Error('The arrays of links, thumbnails and captions are not the same length. Execution failed!');
   }
-}
+};
 
 // Gets an array and checks if any of its items contain a string of text
 // If they do, then it adds the index from an original array to new one
 // And returns it as an array of indexes
-function getIndicesOfText(sampleArray, text) {
+const getIndicesOfText = (sampleArray, text) => {
   const newIndices = [];
   for (let index = 0; index < sampleArray.length; index += 1) {
     const lcIndex = sampleArray[index].toLowerCase();
@@ -67,27 +67,27 @@ function getIndicesOfText(sampleArray, text) {
     }
   }
   return newIndices;
-}
+};
 
 // Populates 'gallery' container based on search by text. Similar to getGalleryItems,
 // but this one is used in searches
-function getItemsByIndices(iArray) {
+const getItemsByIndices = iArray => {
   // Targets 'gallery' container
   const gallery = document.getElementById('gallery');
   // Iterates through three arrays to form a gallery-item element
   for (let index = 0; index < iArray.length; index += 1) {
     // It also makes up a p element with link to the full image, but their display is hidden with CSS tools
-    let galleryItem = `<div class="gallery-item"><img src="${thumbs[iArray[index]]}" alt="${captions[iArray[index]]}"/><p class="display-none">${photos[iArray[index]]}</p></div>`;
+    let galleryItem = `<div class="gallery-item"><a href="${photos[iArray[index]]}" data-lightbox="imageset" data-title="${captions[iArray[index]]}"><img src="${thumbs[iArray[index]]}" alt="${captions[iArray[index]]}"/></a></div>`;
     // Then add it to the container
     gallery.innerHTML += galleryItem;
   }
-}
+};
 
 // Populating the gallery
 getGalleryItems(photos, thumbs, captions);
 
 // Using jQuery to set 'change' event listener to #search-input
-$('#search-input').on('change', function() {
+$('#search-input').on('input', function() {
   // clearing the gallery of previously shown elements
   $('#gallery').html(' ');
   // getting the value of #search-input
@@ -102,4 +102,4 @@ $('#search-input').on('change', function() {
   $gItems.hide();
   // only to fade them in beautifully afterwards
   $gItems.fadeIn(1500);
-})
+});
