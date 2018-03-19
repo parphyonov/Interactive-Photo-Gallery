@@ -21,6 +21,9 @@ $searchInput.on('input', function() {
     // If data-title of an anchor does not contain the string from the #search-input, its parent gets hidden
     if (lcTitle.includes(value) !== true) {
       $(this).parent().hide();
+    } else {
+      // This line fixes the amount of images the lightbox grabs
+      $(this).attr(`data-lightbox`, `imageset-${value}`);
     }
   })
 });
