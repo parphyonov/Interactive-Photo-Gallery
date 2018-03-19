@@ -13,22 +13,89 @@
 
   <div class="container">
 
-    <input type="text" placeholder="Search(16pt)" id="search-input" name="search_input">
+    <input type="text" placeholder="Search" id="search-input" name="search_input" autofocus>
 
-    <div id="gallery"></div>
+    <!-- For the sakes of Unintrusive JS the gallery items are hard-coded into index.html -->
+    <div id="gallery">
+
+      <div class="gallery-item">
+        <a href="photos/01.jpg" data-lightbox="imageset" data-title="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
+          <img src="photos/thumbnails/01.jpg" alt="Hay Bales"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/02.jpg" data-lightbox="imageset" data-title="The lake was so calm today. We had a great view of the snow on the mountains from here.">
+          <img src="photos/thumbnails/02.jpg" alt="Lake"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/03.jpg" data-lightbox="imageset" data-title="I hiked to the top of the mountain and got this picture of the canyon and trees below.">
+          <img src="photos/thumbnails/03.jpg" alt="Canyon"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/04.jpg" data-lightbox="imageset" data-title="It was amazing to see an iceberg up close, it was so cold but didn’t snow today.">
+          <img src="photos/thumbnails/04.jpg" alt="Iceberg"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/05.jpg" data-lightbox="imageset" data-title="The red cliffs were beautiful. It was really hot in the desert but we did a lot of walking through the canyons.">
+          <img src="photos/thumbnails/05.jpg" alt="Desert"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/06.jpg" data-lightbox="imageset" data-title="Fall is coming, I love when the leaves on the trees start to change color.">
+          <img src="photos/thumbnails/06.jpg" alt="Fall"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/07.jpg" data-lightbox="imageset" data-title="I drove past this plantation yesterday, everything is so green!">
+          <img src="photos/thumbnails/07.jpg" alt="Plantation"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/08.jpg" data-lightbox="imageset" data-title="My summer vacation to the Oregon Coast. I love the sandy dunes!">
+          <img src="photos/thumbnails/08.jpg" alt="Dunes"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/09.jpg" data-lightbox="imageset" data-title="We enjoyed a quiet stroll down this countryside lane.">
+          <img src="photos/thumbnails/09.jpg" alt="Countryside Lane"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/10.jpg" data-lightbox="imageset" data-title="Sunset at the coast! The sky turned a lovely shade of orange.">
+          <img src="photos/thumbnails/10.jpg" alt="Sunset"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/11.jpg" data-lightbox="imageset" data-title="I did a tour of a cave today and the view of the landscape below was breathtaking.">
+          <img src="photos/thumbnails/11.jpg" alt="Cave"/>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="photos/12.jpg" data-lightbox="imageset" data-title="I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.">
+          <img src="photos/thumbnails/12.jpg" alt="Bluebells"/>
+        </a>
+      </div>
+
+    </div>
 
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/lightbox/lightbox.js"></script>
   <script src="js/gallery.js"></script>
-  <script>
-    lightbox.option({
-      'alwaysShowNavOnTouchDevices': true,
-      'positionFromTop': 50,
-      'resizeDuration': 200,
-      'wrapAround': true
-    });
-  </script>
 </body>
 </html>

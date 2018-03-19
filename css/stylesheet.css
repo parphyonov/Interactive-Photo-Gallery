@@ -40,6 +40,14 @@ body {
   margin-bottom: 1em;
 }
 
+.lightboxOverlay {
+  border-top: 10px dashed #fff;
+}
+
+.lb-number {
+  border-bottom: 10px dashed #fff;
+}
+
 @media screen and (min-width: 768px) {
 
   .container {
@@ -72,6 +80,14 @@ body {
 
   #search-input {
     width: 29em;
+  }
+
+  .lightboxOverlay {
+    border-top: none;
+  }
+
+  .lb-number {
+    border-bottom: none;
   }
 
 }

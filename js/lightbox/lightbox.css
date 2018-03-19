@@ -8,7 +8,6 @@ html.lb-disable-scrolling {
 
 .lightboxOverlay {
   position: absolute;
-  border-top: 10px dashed #fff;
   top: 0;
   left: 0;
   z-index: 9999;
