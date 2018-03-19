@@ -29,11 +29,9 @@ $searchInput.on('input', function() {
 Lightbox Programming
 *******************************************************************************/
 
-$('.gallery-item a').addClass('swipebox');
-
-// lightbox.option({
-//   'alwaysShowNavOnTouchDevices': true,
-//   'positionFromTop': 50,
-//   'resizeDuration': 200,
-//   'wrapAround': true
-// });
+lightbox.option({
+  'alwaysShowNavOnTouchDevices': true,
+  'positionFromTop': 50,
+  'resizeDuration': 200,
+  'wrapAround': true
+});
